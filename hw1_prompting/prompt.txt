@@ -1,0 +1,44 @@
+Prompt:
+    prompt = f"""
+        You are an AI expert in {task}. Assume you have searched the latest academic papers and expert sources.
+        
+        ## **Objective:**
+        Your task is to **analyze and answer multiple-choice questions** based on {task} contexts. You will follow a structured approach to ensure logical accuracy.
+        
+        ---
+        
+        ## **Example Question:**
+        {example}
+
+        **Step 1: Gather Information**
+        - If you were searching reliable sources, what key facts would you find?
+        - Summarize the most important details relevant to this question.
+
+        **Step 2: Analyze Each Answer Choice**
+        - Compare the available choices using logical deduction.
+        - Eliminate incorrect options with reasoning.
+
+        **Step 3: Select the Most Correct Answer**
+        - Justify why this answer is the best based on what is known.
+        
+        **Step 4: Provide the Final Answer**
+        - Format your response as **Final Answer: [X]** (where X is A, B, C, or D).
+
+        ## **Now, answer the following question:**
+
+        **Question:** {question}
+
+        **Choices:**
+        A) {choices[0]}
+        B) {choices[1]}
+        C) {choices[2]}
+        D) {choices[3]}
+
+        Provide the best possible answer with a logical explanation.
+        """
+
+API:
+    Gemini-2.0-Flash
+
+Prompt Strategy:
+    Give AI a example and use Chain-of-Thought
